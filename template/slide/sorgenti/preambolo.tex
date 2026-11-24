@@ -1,0 +1,34 @@
+% Preambolo del template «slide tradotte e riprogettate» (Beamer, 16:9)
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,mathtools,graphicx,booktabs,xcolor,tikz,listings,array,multicol}
+% colonna P{larghezza} = p{} a bandiera: niente spazi larghi (e sillabazioni forzate) nelle colonne strette delle tabelle
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usetikzlibrary{positioning,arrows.meta,calc}
+% gauss(x,mu,sigma): campana non normalizzata, per disegnare densità in TikZ (nei frame non si può usare \def con #1)
+\pgfmathdeclarefunction{gauss}{3}{\pgfmathparse{exp(-((#1-#2)^2)/(2*(#3)^2))}}
+
+% --- stile: lo scelgono i file in stili/ (classico, sobrio, colorato, accademico) ---
+% Per cambiare stile basta cambiare il nome nella riga \input; colori e font si ritoccano nel file dello stile.
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+\input{stili/sobrio}
+
+% --- blocchi in italiano ---
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{definizione}{Definizione}
+\newtheorem{proprieta}{Proprietà}
+\renewcommand{\proofname}{Dimostrazione}
+
+% --- figura presa dalla slide originale (estratta o ritagliata con codice/processa_slide.py) ---
+% uso: \slidefig[0.7]{figure/slide_012.jpg}{Fonte: slide del corso, p.~12}
+\newcommand{\slidefig}[3][0.7]{%
+  \begin{center}\includegraphics[width=#1\linewidth,height=0.66\textheight,keepaspectratio]{#2}\\[-2pt]{\tiny\color{gray}#3}\end{center}}
+
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,frame=single,
+  backgroundcolor=\color{sfondochiaro},rulecolor=\color{principale}}
+
+% --- indice compatto su quattro colonne (uso: \begin{frame}{Indice}\indicecompatto\end{frame}) ---
+\setbeamertemplate{section in toc}{\leavevmode\inserttocsectionnumber.~\inserttocsection\par\vspace{3pt}}
+\newcommand{\indicecompatto}{{\footnotesize\raggedright\begin{multicols}{4}\tableofcontents[hideallsubsections]\end{multicols}}}

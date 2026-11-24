@@ -1,0 +1,56 @@
+# --- File temporanei di LaTeX / latexmk ---
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.xdv
+
+# --- Temporanei di Beamer (slide) ---
+*.nav
+*.snm
+*.vrb
+
+# --- PDF generati in sorgenti/ (il PDF pubblicato sta nella cartella della dispensa o delle slide) ---
+**/sorgenti/*.pdf
+**/sorgenti/it/main_it.pdf
+**/sorgenti/en/main_en.pdf
+
+# --- Materiale del docente e di lavoro (slide, appunti, trascrizioni, letture, avanzamento) ---
+**/materiali/
+**/slide-da-tradurre/
+corsi/*/slides/
+corsi/*/lezione*/
+corsi/*/Lezione*/
+
+# --- Python ---
+__pycache__/
+*.pyc
+
+# --- File di sistema ed editor ---
+.DS_Store
+Thumbs.db
+~$*
+.~lock.*#
+*.zip
+
+# --- Registrazioni audio/video delle lezioni (restano solo in locale) ---
+*.m4a
+*.mp3
+*.wav
+*.aac
+*.ogg
+*.flac
+*.mp4
+*.mov
+
+# --- Eccezione: Calcolatori Elettronici (lavoro da telefono, su richiesta dell'utente) ---
+!corsi/triennale/calcolatori-elettronici/materiali/

@@ -1,0 +1,4 @@
+$pdf_mode = 1;
+# Un PDF per ogni pacco di slide: ogni file .tex nella cartella (tranne preambolo.tex)
+# è un pacco e il PDF prende il suo nome (= titolo del pacco tradotto, senza spazi).
+@default_files = grep { $_ ne 'preambolo.tex' } glob('*.tex');

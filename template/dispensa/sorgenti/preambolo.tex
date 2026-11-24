@@ -1,0 +1,135 @@
+% ---------- lingua e codifica ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ---------- pagina ----------
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\small\nouppercase{\leftmark}}
+\fancyhead[LO]{\small\nouppercase{\rightmark}}
+\setlength{\headheight}{14pt}
+
+% ---------- matematica ----------
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage[per-mode=symbol]{siunitx}
+\sisetup{output-decimal-marker={,}, exponent-product=\cdot, group-separator={\,}}
+
+% ---------- grafica ----------
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,decorations.pathreplacing,patterns,angles,quotes}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{fillbetween,groupplots}
+\usepackage{subcaption}
+\usepackage{booktabs,tabularx,multirow}
+\usepackage{enumitem}
+\usepackage[font=small,labelfont=bf]{caption}
+
+% ---------- box colorati ----------
+\usepackage{etoolbox,needspace}
+\usepackage[most]{tcolorbox}
+\tcbset{enhanced, breakable, fonttitle=\bfseries, arc=2pt, before skip=11pt plus 2pt, after skip=11pt plus 2pt}
+\newcommand{\sottotitolo}[1]{\if\relax\detokenize{#1}\relax\else: #1\fi}
+\newtcolorbox{esempio}[1][]{unbreakable, colback=blue!3, colframe=blue!50!black, title={Esempio\sottotitolo{#1}}}
+\newtcolorbox{attenzione}[1][]{unbreakable, colback=red!3, colframe=red!60!black, title={Attenzione\sottotitolo{#1}}}
+\newtcolorbox{richiamo}[1][]{colback=green!3, colframe=green!40!black, title={Richiamo di matematica\sottotitolo{#1}}}
+\newtcolorbox{prerequisiti}{unbreakable, colback=yellow!8, colframe=orange!60!black, title={Prerequisiti (vedi Capitolo~0)}, fontupper=\small}
+\newtcolorbox{riquadro}[1]{unbreakable, colback=blue!4, colframe=blue!55!black, title={#1}, fontupper=\normalsize}
+\newcommand{\serve}[1]{\par\medskip\noindent\textbf{Perch\'e ci serve in questo corso.} #1\par\medskip}
+\newtcolorbox{riassunto}[1][]{unbreakable, colback=gray!5, colframe=gray!60!black, title={In sintesi\sottotitolo{#1}}}
+
+% ---------- codice ----------
+\usepackage{listings}
+\lstset{language=Matlab, basicstyle=\ttfamily\footnotesize, keywordstyle=\color{blue!70!black},
+        commentstyle=\color{green!40!black}, stringstyle=\color{red!60!black},
+        numbers=left, numberstyle=\tiny\color{gray}, numbersep=6pt, xleftmargin=2.2em, xrightmargin=1.2em, framexleftmargin=2em, framexrightmargin=2pt, frame=single, breaklines=true, breakindent=0pt, postbreak=\mbox{\textcolor{gray}{$\hookrightarrow$}\space}, aboveskip=10pt, belowskip=10pt, showstringspaces=false,
+        literate={è}{{\`e}}1 {à}{{\`a}}1 {ù}{{\`u}}1 {ò}{{\`o}}1 {é}{{\'e}}1}
+
+% ---------- riferimenti ----------
+\usepackage[hidelinks]{hyperref}
+\usepackage[italian,nameinlink]{cleveref}
+
+% ---------- teoremi ----------
+\theoremstyle{definition}
+\newtheorem{definizione}{Definizione}[chapter]
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{proposizione}[teorema]{Proposizione}
+\newtheorem{lemma}[teorema]{Lemma}
+\newtheorem{proprieta}[teorema]{Propriet\`a}
+\theoremstyle{remark}
+\newtheorem{osservazione}{Osservazione}[chapter]
+\renewcommand{\proofname}{Dimostrazione}
+\crefname{teorema}{teorema}{teoremi}           \Crefname{teorema}{Teorema}{Teoremi}
+\crefname{proposizione}{proposizione}{proposizioni} \Crefname{proposizione}{Proposizione}{Proposizioni}
+\crefname{proprieta}{propriet\`a}{propriet\`a} \Crefname{proprieta}{Propriet\`a}{Propriet\`a}
+\crefname{lemma}{lemma}{lemmi}                 \Crefname{lemma}{Lemma}{Lemmi}
+\crefname{definizione}{definizione}{definizioni} \Crefname{definizione}{Definizione}{Definizioni}
+\crefname{osservazione}{osservazione}{osservazioni} \Crefname{osservazione}{Osservazione}{Osservazioni}
+\crefname{appendix}{appendice}{appendici} \Crefname{appendix}{Appendice}{Appendici}
+
+% ---------- riquadri per definizioni e teoremi ----------
+\tcolorboxenvironment{definizione}{unbreakable, colback=blue!3, colframe=blue!55!black, boxrule=0.6pt, left=6pt, right=6pt, top=3pt, bottom=3pt, before skip=11pt plus 2pt, after skip=11pt plus 2pt}
+\tcolorboxenvironment{teorema}{unbreakable, colback=orange!5, colframe=orange!70!black, boxrule=0.6pt, left=6pt, right=6pt, top=3pt, bottom=3pt, before skip=11pt plus 2pt, after skip=11pt plus 2pt}
+\tcolorboxenvironment{proposizione}{unbreakable, colback=orange!5, colframe=orange!70!black, boxrule=0.6pt, left=6pt, right=6pt, top=3pt, bottom=3pt, before skip=11pt plus 2pt, after skip=11pt plus 2pt}
+\tcolorboxenvironment{lemma}{unbreakable, colback=orange!5, colframe=orange!70!black, boxrule=0.6pt, left=6pt, right=6pt, top=3pt, bottom=3pt, before skip=11pt plus 2pt, after skip=11pt plus 2pt}
+
+\renewcommand{\arraystretch}{1.25}
+% ---------- tipografia: niente righe orfane, titoli non isolati a fondo pagina ----------
+\raggedbottom
+\emergencystretch=3em
+\widowpenalty=10000 \clubpenalty=10000
+\pretocmd{\section}{\Needspace{10\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{8\baselineskip}}{}{}
+
+% ---------- macro ----------
+\newcommand{\vect}[1]{\bm{#1}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand{\FT}{\mathcal{F}}
+\newcommand{\ft}[1]{\tilde{#1}}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\E}{\mathbb{E}}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\rect}{rect}
+\DeclareMathOperator{\circfn}{circ}
+\DeclareMathOperator{\comb}{comb}
+\newcommand{\arcsec}{\mathrm{arcsec}}
+
+% figura presa dalle slide: \slidefig[larghezza]{file}{didascalia}{etichetta}
+% «file» è il nome in figure/ (estratto o ritagliato da processa_slide.py); un numero di pagina `012` indica il vecchio slide_012.jpg
+\newcommand{\slidefig}[4][0.7]{%
+  \begin{figure}[htbp]\centering
+  \IfFileExists{figure/#2}%
+    {\includegraphics[width=#1\textwidth,height=0.42\textheight,keepaspectratio]{figure/#2}}%
+    {\includegraphics[width=#1\textwidth,height=0.42\textheight,keepaspectratio]{figure/slide_#2.jpg}}
+  \caption{#3}\label{#4}
+  \end{figure}}
+
+% figura di una lezione: \figuralezione[larghezza]{nome-file.png}{didascalia}{etichetta}
+% Se il file non è ancora in figure/, mostra un riquadro con il nome: la dispensa compila comunque.
+\newcommand{\figuralezione}[4][0.8]{%
+  \begin{figure}[htbp]\centering
+  \IfFileExists{figure/#2}%
+    {\includegraphics[width=#1\textwidth,height=0.42\textheight,keepaspectratio]{figure/#2}}%
+    {\fbox{\parbox{#1\textwidth}{\centering\vspace{3em}\textit{Figura da inserire:} \texttt{\detokenize{#2}}\vspace{3em}}}}
+  \caption{#3}\label{#4}
+  \end{figure}}
+
+% contenuto della dispensa senza riscontro nelle slide (comando /aderenza):
+% \begin{extraslide} ... \end{extraslide}  oppure  \extraslide{testo breve}
+\newtcolorbox{extraslide}{breakable, colback=red!3, colframe=red!60!black, fonttitle=\bfseries\small, title={[CONTENUTO EXTRA NON PRESENTE NELLE SLIDE]}}

@@ -1,0 +1,19 @@
+% Stile «sobrio»: grigio antracite e bordeaux, font con grazie (Palatino), titolo con filetto. Colori e font: modificare solo qui.
+\usepackage{mathpazo}
+\usefonttheme{serif}
+\definecolor{principale}{HTML}{2B2B2B}
+\definecolor{accento}{HTML}{8E1B2E}
+\definecolor{sfondochiaro}{HTML}{F4F4F2}
+\usecolortheme[named=principale]{structure}
+\setbeamercolor{frametitle}{fg=principale}
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+\setbeamertemplate{frametitle}{\vspace{4pt}\insertframetitle\par\vspace{-2pt}{\color{accento}\rule{\textwidth}{1.2pt}}}
+\setbeamertemplate{itemize items}[square]
+\setbeamercolor{itemize item}{fg=accento}
+\setbeamercolor{block title}{bg=sfondochiaro,fg=principale}
+\setbeamercolor{block body}{bg=sfondochiaro}
+\setbeamercolor{block title alerted}{bg=sfondochiaro,fg=accento}
+\setbeamercolor{block body alerted}{bg=sfondochiaro}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamertemplate{footline}{%
+  \hfill\small\color{gray}\insertframenumber\hspace{1em}\vspace{4pt}}

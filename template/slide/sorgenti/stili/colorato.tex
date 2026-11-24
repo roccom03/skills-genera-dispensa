@@ -1,0 +1,17 @@
+% Stile «colorato»: verde acqua e arancio, barra del titolo piena a tutta larghezza. Colori e font: modificare solo qui.
+\definecolor{principale}{HTML}{0E7C7B}
+\definecolor{accento}{HTML}{F28F3B}
+\definecolor{sfondochiaro}{HTML}{E8F4F3}
+\usecolortheme[named=principale]{structure}
+\setbeamercolor{frametitle}{bg=principale,fg=white}
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+\setbeamertemplate{frametitle}{\nointerlineskip
+  \begin{beamercolorbox}[wd=\paperwidth,ht=3.2ex,dp=1.4ex,leftskip=1em]{frametitle}\insertframetitle\end{beamercolorbox}}
+\setbeamertemplate{itemize items}[circle]
+\setbeamercolor{itemize item}{fg=accento}
+\setbeamercolor{block title}{bg=principale!85,fg=white}
+\setbeamercolor{block body}{bg=sfondochiaro}
+\setbeamercolor{block title alerted}{bg=accento,fg=white}
+\setbeamercolor{block body alerted}{bg=sfondochiaro}
+\setbeamertemplate{footline}{%
+  \hfill\small\color{principale}\insertframenumber/\inserttotalframenumber\hspace{1em}\vspace{4pt}}

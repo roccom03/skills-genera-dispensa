@@ -1,0 +1,19 @@
+% File del pacco: rinominalo con il titolo del pacco tradotto (es. Tecniche-di-modulazione-digitale.tex):
+% il PDF prende lo stesso nome. Un pacco = un file .tex = un PDF.
+\documentclass[aspectratio=169,11pt]{beamer}
+\input{preambolo}
+
+\title{TITOLO}
+\subtitle{Traduzione in italiano e riprogettazione grafica delle slide}
+\author{Slide originali: NOME DOCENTE}
+\institute{NOME CORSO}
+\date{A.A. 20XX/20YY}
+
+\begin{document}
+\begin{frame}[plain]\titlepage\end{frame}
+\begin{frame}{Indice}\indicecompatto\end{frame}
+
+\input{sezioni/nome-pacco/01_primo_argomento}
+% \input{sezioni/nome-pacco/02_...}   % una sezione per blocco di slide, nell'ordine originale
+
+\end{document}

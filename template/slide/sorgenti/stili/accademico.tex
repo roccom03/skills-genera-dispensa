@@ -1,0 +1,25 @@
+% Stile «accademico»: verde bosco e oro, font con grazie (Charter), striscia laterale. Colori e font: modificare solo qui.
+\usetikzlibrary{calc}
+\usepackage{charter}
+\usefonttheme{serif}
+\definecolor{principale}{HTML}{1E4D3A}
+\definecolor{accento}{HTML}{B8860B}
+\definecolor{sfondochiaro}{HTML}{F5F2E8}
+\usecolortheme[named=principale]{structure}
+\setbeamersize{text margin left=1.1cm,text margin right=0.9cm}
+\setbeamercolor{frametitle}{fg=principale}
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+\setbeamertemplate{frametitle}{\nointerlineskip\vskip3pt
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=1.1cm,rightskip=0.9cm]{frametitle}\insertframetitle\end{beamercolorbox}}
+\setbeamertemplate{background}{\begin{tikzpicture}[remember picture,overlay]
+  \fill[principale](current page.north west)rectangle([xshift=0.35cm]current page.south west);
+  \fill[accento]($(current page.north west)+(0.35cm,0)$)rectangle([xshift=0.45cm]current page.south west);
+  \end{tikzpicture}}
+\setbeamertemplate{itemize items}[triangle]
+\setbeamercolor{itemize item}{fg=accento}
+\setbeamercolor{block title}{bg=principale,fg=white}
+\setbeamercolor{block body}{bg=sfondochiaro}
+\setbeamercolor{block title alerted}{bg=accento,fg=white}
+\setbeamercolor{block body alerted}{bg=sfondochiaro}
+\setbeamertemplate{footline}{%
+  \hfill\small\color{principale}\insertframenumber/\inserttotalframenumber\hspace{1em}\vspace{4pt}}

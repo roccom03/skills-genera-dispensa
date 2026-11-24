@@ -1,0 +1,21 @@
+\documentclass[11pt,a4paper,twoside,openany]{report}
+\input{preambolo}
+
+\title{\Huge TITOLO DISPENSA\\[8pt]\Large Sottotitolo}
+\author{Dispensa di studio basata sulle slide del corso\\ \emph{NOME CORSO} (prof.\ NOME DOCENTE)}
+\date{A.A. 20XX/20YY}
+
+\begin{document}
+\pagenumbering{roman}
+\maketitle
+\clearpage
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\include{capitoli/000_prerequisiti}   % Capitolo 0, sempre per primo
+\include{capitoli/00_introduzione}
+\include{capitoli/01_primo_argomento}
+% \include{capitoli/02_...}           % un capitolo per blocco di slide, nell'ordine delle slide
+
+\end{document}

@@ -1,0 +1,14 @@
+% Stile «classico»: blu, font sans, blocchi pieni. Colori e font: modificare solo qui.
+\definecolor{principale}{HTML}{1F4E79}
+\definecolor{accento}{HTML}{C0392B}
+\definecolor{sfondochiaro}{HTML}{F3F6FA}
+\usecolortheme[named=principale]{structure}
+\setbeamercolor{frametitle}{fg=principale}
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+\setbeamertemplate{itemize items}[circle]
+\setbeamercolor{block title}{bg=principale,fg=white}
+\setbeamercolor{block body}{bg=sfondochiaro}
+\setbeamercolor{block title alerted}{bg=accento,fg=white}
+\setbeamercolor{block body alerted}{bg=sfondochiaro}
+\setbeamertemplate{footline}{%
+  \hfill\small\color{gray}\insertframenumber/\inserttotalframenumber\hspace{1em}\vspace{4pt}}
