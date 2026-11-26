@@ -1,0 +1,40 @@
+% Stile «topology» (ispirato al tema Slidesgo «Topology – Master of Science in Mathematics»):
+% fondo grigio chiarissimo, blu notte e verde acqua, sans-serif, fregi geometrici (quadrati concentrici e punti).
+% Colori e decorazioni: modificare solo qui.
+\definecolor{principale}{HTML}{1F2A56}   % blu notte (titoli, testo strutturale)
+\definecolor{accento}{HTML}{2E8B7D}      % verde acqua
+\definecolor{secondario}{HTML}{3556A8}   % blu
+\definecolor{sfondochiaro}{HTML}{E4E7EC} % riquadri
+\definecolor{fondoslide}{HTML}{F2F3F5}   % sfondo
+\usecolortheme[named=principale]{structure}
+\setbeamercolor{background canvas}{bg=fondoslide}
+\setbeamercolor{normal text}{fg=principale!90!black}
+\setbeamercolor{frametitle}{fg=principale}
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+\setbeamertemplate{frametitle}{\vspace{6pt}\insertframetitle\par\vspace{-3pt}{\color{accento}\rule{2.2cm}{2.5pt}}}
+\setbeamertemplate{itemize items}[circle]
+\setbeamercolor{itemize item}{fg=accento}
+\setbeamercolor{itemize subitem}{fg=secondario}
+\setbeamercolor{enumerate item}{fg=accento}
+\setbeamercolor{block title}{bg=principale,fg=white}
+\setbeamercolor{block body}{bg=sfondochiaro,fg=principale!90!black}
+\setbeamercolor{block title alerted}{bg=accento,fg=white}
+\setbeamercolor{block body alerted}{bg=sfondochiaro,fg=principale!90!black}
+\setbeamercolor{block title example}{bg=secondario,fg=white}
+\setbeamercolor{block body example}{bg=sfondochiaro,fg=principale!90!black}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamercolor{alerted text}{fg=accento}
+% fregi: fascio di diagonali in alto a sinistra e in basso a destra, punto blu in alto a destra
+\setbeamertemplate{background canvas}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[fondoslide] (current page.south west) rectangle (current page.north east);
+    \foreach \i in {1,2,3,4,5}{
+      \draw[principale!50,line width=0.4pt]
+        ([shift={(0,-\i*0.32cm)}]current page.north west) -- ++(\i*0.32cm,\i*0.32cm);}
+    \foreach \i in {1,2,3,4,5}{
+      \draw[principale!50,line width=0.4pt]
+        ([shift={(0,\i*0.32cm)}]current page.south east) -- ++(-\i*0.32cm,-\i*0.32cm);}
+    \fill[secondario] ([shift={(-1.2cm,-0.9cm)}]current page.north east) circle (0.12cm);
+  \end{tikzpicture}}
+\setbeamertemplate{footline}{%
+  \hfill{\color{white}\colorbox{principale}{\small\,\insertframenumber\,}}\hspace{1.3em}\vspace{5pt}}

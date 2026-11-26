@@ -9,7 +9,7 @@
 % gauss(x,mu,sigma): campana non normalizzata, per disegnare densità in TikZ (nei frame non si può usare \def con #1)
 \pgfmathdeclarefunction{gauss}{3}{\pgfmathparse{exp(-((#1-#2)^2)/(2*(#3)^2))}}
 
-% --- stile: lo scelgono i file in stili/ (classico, sobrio, colorato, accademico) ---
+% --- stile: lo scelgono i file in stili/ (classico, sobrio, colorato, accademico, topology, circuito) ---
 % Per cambiare stile basta cambiare il nome nella riga \input; colori e font si ritoccano nel file dello stile.
 \usetheme{default}
 \setbeamertemplate{navigation symbols}{}

@@ -1,0 +1,46 @@
+% Stile «circuito» (ispirato al tema Slidesgo «Computer Science College Major»):
+% fondo blu notte/viola, testo chiaro, accenti ciano, linee di circuito in basso. Colori e decorazioni: solo qui.
+\definecolor{principale}{HTML}{3DD6F5}   % ciano (titoli, elementi strutturali)
+\definecolor{accento}{HTML}{B07CFF}      % viola chiaro
+\definecolor{sfondochiaro}{HTML}{1B2160} % riquadri (scuri: il testo resta chiaro)
+\definecolor{fondoslide}{HTML}{0D1040}   % sfondo
+\definecolor{testochiaro}{HTML}{ECEFFA}
+\usecolortheme[named=principale]{structure}
+\setbeamercolor{normal text}{fg=testochiaro,bg=fondoslide}
+\setbeamercolor{background canvas}{bg=fondoslide}
+\setbeamercolor{frametitle}{fg=principale}
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+\setbeamertemplate{frametitle}{\vspace{6pt}\insertframetitle\par\vspace{-3pt}{\color{accento}\rule{2.2cm}{2.5pt}}}
+\setbeamertemplate{itemize items}[square]
+\setbeamercolor{itemize item}{fg=principale}
+\setbeamercolor{itemize subitem}{fg=accento}
+\setbeamercolor{enumerate item}{fg=principale}
+\setbeamercolor{block title}{bg=sfondochiaro,fg=principale}
+\setbeamercolor{block body}{bg=sfondochiaro!70!fondoslide,fg=testochiaro}
+\setbeamercolor{block title alerted}{bg=sfondochiaro,fg=accento}
+\setbeamercolor{block body alerted}{bg=sfondochiaro!70!fondoslide,fg=testochiaro}
+\setbeamercolor{block title example}{bg=sfondochiaro,fg=principale}
+\setbeamercolor{block body example}{bg=sfondochiaro!70!fondoslide,fg=testochiaro}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamercolor{alerted text}{fg=accento}
+\setbeamercolor{title}{fg=principale}
+\setbeamercolor{subtitle}{fg=accento}
+\setbeamercolor{author}{fg=testochiaro}
+\setbeamercolor{institute}{fg=testochiaro}
+\setbeamercolor{date}{fg=testochiaro}
+\setbeamercolor{caption name}{fg=principale}
+% linee di circuito in basso con nodi
+\setbeamertemplate{background canvas}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[fondoslide] (current page.south west) rectangle (current page.north east);
+    \foreach \x/\h in {0.6/0.5,1.0/0.9,1.4/0.6,2.2/0.8}{
+      \draw[principale!45,line width=0.5pt]
+        ([shift={(\x cm,0)}]current page.south west) -- ++(0,\h cm) -- ++(0.4cm,0.4cm) -- ++(0.3cm,0);
+      \fill[principale!70] ([shift={(\x cm+0.7cm,\h cm+0.4cm)}]current page.south west) circle (0.05cm);}
+    \foreach \x/\h in {0.5/0.6,1.1/0.9,1.7/0.5}{
+      \draw[accento!50,line width=0.5pt]
+        ([shift={(-\x cm,0)}]current page.south east) -- ++(0,\h cm) -- ++(-0.4cm,0.4cm) -- ++(-0.3cm,0);
+      \fill[accento!80] ([shift={(-\x cm-0.7cm,\h cm+0.4cm)}]current page.south east) circle (0.05cm);}
+  \end{tikzpicture}}
+\setbeamertemplate{footline}{%
+  \hfill{\small\color{principale}\insertframenumber}\hspace{1.3em}\vspace{5pt}}
